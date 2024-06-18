@@ -15,4 +15,8 @@ public class TemplateService {
     public List<Product> products(){
         return mapper.products();
     }
+
+    public void register(Product product){
+        mapper.register(product);
+    }
 }

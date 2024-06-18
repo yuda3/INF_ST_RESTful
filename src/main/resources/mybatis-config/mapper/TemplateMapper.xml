@@ -7,6 +7,9 @@
     <select id="products" resultType="com.example.entity.Product">
         SELECT * FROM PRODUCT
     </select>
-
+    <insert id="register" parameterType="com.example.entity.Product">
+        INSERT INTO PRODUCT (PRODUCT_NAME, INVENTORY, PRICE, MANUFACTURER)
+        VALUES(#{product_name},#{inventory},#{price},#{manufacturer})
+    </insert>
 
 </mapper>
