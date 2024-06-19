@@ -10,16 +10,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="${cpath}/resources/css/style.css">
-    <script src="${cpath}/resources/js/detail.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
     <script src="${cpath}/resources/js/update.js"></script>
-    <script src="${cpath}/resources/js/delete.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    restProductDetails("${product_number}");
-</script>
+
 </head>
 <body>
 
@@ -41,13 +37,24 @@
             </div>
         </div>
         <div class="card-body">
-            <h5>Detail</h5>
-            <div id="productDetails"></div>
-            <div class="text-center">
-                <button class="btn btn-sm btn-info" onclick="goUpdate(${product_number})">Modify</button>
-                <button class="btn btn-sm btn-info" onclick="goDel(${product_number})">Delete</button>
-                <button class="btn btn-sm btn-info" onclick="location.href='${cpath}/list'">List</button>
-            </div>
+            <h5>Modify</h5>
+            <form >
+                <div class="form-group">
+                    <label for="product_name">Product Name :</label>
+                    <input type="text" class="form-control" placeholder="Product Name" id="product_name" value="${product.product_name}">
+                </div>
+                <div class="form-group">
+                    <label for="inventory">Inventory :</label>
+                    <input type="text" class="form-control" placeholder="Inventory" id="inventory" value="${product.inventory}">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price :</label>
+                    <input type="text" class="form-control" placeholder="Price" id="price" value="${product.price}">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="goSubmit(${product.product_number})">Submit</button>
+                <button type="button" class="btn btn-primary" >Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='${cpath}/list'">List</button>
+            </form>
         </div>
         <div class="card-footer">Spring RESTful API SOA Project</div>
     </div>
