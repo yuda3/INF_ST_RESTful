@@ -13,12 +13,13 @@ function restProductList(){
             let tbody = productListTable.querySelector("tbody");
             tbody.innerHTML= "";
             products.forEach(function (product){
-               let tr = document.createElement("tr");
-               tr.innerHTML="<td>" + product.product_number + "</td>"+
-                   "<td>" + product.product_name + "</td>"+
-                   "<td>" + product.inventory + "</td>"+
-                   "<td>" + product.price + "</td>"+
-                   "<td>" + product.manufacturer + "</td>"
+                let pnum = product.product_number;
+                let tr = document.createElement("tr");
+                tr.innerHTML="<td>" + product.product_number + "</td>"+
+                    "<td><a href='/REST/detail/"+pnum+"'>" + product.product_name + "</a></td>"+
+                    "<td>" + product.inventory + "</td>"+
+                    "<td>" + product.price + "</td>"+
+                    "<td>" + product.manufacturer + "</td>"
                 tbody.appendChild(tr);
             });
         })
