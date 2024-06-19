@@ -19,4 +19,8 @@ public class TemplateService {
     public void register(Product product){
         mapper.register(product);
     }
+
+    public int deleteById(int product_number){
+        return mapper.deleteById(product_number);
+    }
 }

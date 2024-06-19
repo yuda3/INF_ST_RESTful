@@ -9,6 +9,7 @@ import java.util.List;
 public interface TemplateMapper {
     List<Product> products();
     void register(Product product);
+    int deleteById(int product_number);
 
 }
 

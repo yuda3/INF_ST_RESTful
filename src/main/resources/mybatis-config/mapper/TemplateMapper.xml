@@ -12,4 +12,8 @@
         VALUES(#{product_name},#{inventory},#{price},#{manufacturer})
     </insert>
 
+    <delete id="deleteById">
+        DELETE FROM PRODUCT WHERE PRODUCT_NUMBER=#{product_number}
+    </delete>
+
 </mapper>

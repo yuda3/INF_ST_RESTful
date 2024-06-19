@@ -32,4 +32,11 @@ public class TemplateController {
         service.register(product);
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
+
+    @DeleteMapping("products/{product_number}")
+    public ResponseEntity<?> deleteById(@PathVariable int product_number){
+        int cnt = service.deleteById(product_number);
+        return new ResponseEntity<>(cnt,HttpStatus.OK);
+    }
+
 }
