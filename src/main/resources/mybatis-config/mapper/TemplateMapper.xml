@@ -18,4 +18,10 @@
     <select id="getById" resultType="com.example.entity.Product">
         SELECT * FROM PRODUCT WHERE PRODUCT_NUMBER=#{product_number}
     </select>
+
+    <update id="update" parameterType="com.example.entity.Product">
+        UPDATE PRODUCT SET PRODUCT_NAME = #{product_name},
+        INVENTORY = #{inventory}, PRICE = #{price}
+        WHERE PRODUCT_NUMBER = #{product_number}
+    </update>
 </mapper>

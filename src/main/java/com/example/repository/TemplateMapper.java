@@ -11,6 +11,7 @@ public interface TemplateMapper {
     void register(Product product);
     int deleteById(int product_number);
     Product getById(int product_number);
+    void update(Product product);
 
 }
 

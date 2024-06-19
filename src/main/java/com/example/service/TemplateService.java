@@ -27,4 +27,8 @@ public class TemplateService {
     public Product getById(int product_number){
         return mapper.getById(product_number);
     }
+
+    public void update(Product product){
+        mapper.update(product);
+    }
 }

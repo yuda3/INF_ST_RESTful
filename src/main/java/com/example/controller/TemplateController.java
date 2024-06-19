@@ -39,6 +39,7 @@ public class TemplateController {
         int cnt = service.deleteById(product_number);
         return new ResponseEntity<>(cnt,HttpStatus.OK);
     }
+
     //Get : https://localhost:8081/REST/api/products/{id}
     @GetMapping("products/{product_number}")
     public ResponseEntity<Product> getById(@PathVariable int product_number){
@@ -46,5 +47,10 @@ public class TemplateController {
         return new ResponseEntity<>(product,HttpStatus.OK);
     }
 
-
+    //Put : https://localhost:8081/REST/api/products/{id} : {product_number, product_name, inventory, price}
+    @PutMapping("products/{product_number}")
+    public ResponseEntity<String> putById(@PathVariable int product_number, @RequestBody Product product){
+        service.update(product);
+        return new ResponseEntity<>("success",HttpStatus.OK);
+    }
 }
