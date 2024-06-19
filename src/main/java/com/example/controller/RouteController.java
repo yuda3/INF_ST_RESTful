@@ -16,4 +16,9 @@ public class RouteController {
         return "list";
     }
 
+    @GetMapping("/register")
+    public String register(){
+        return "register";
+    }
+
 }
