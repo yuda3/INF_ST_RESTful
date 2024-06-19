@@ -6,15 +6,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class IndexController {
+public class RouteController {
 
     @Autowired
     private TemplateService service;
 
     @GetMapping("/template")
-    public String index(){
-        return "template";   // template.jsp
+    public String index() {
+        return "template";
     }
-    // 추가적인 기능 구현
+
+    @GetMapping("/list")
+    public String list(){
+        return "list";
+    }
 
 }

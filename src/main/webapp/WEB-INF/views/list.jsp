@@ -11,11 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
-    <script src="resources/js/script.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="resources/js/script.js"></script>
+    <script>
+        //ajax (list.js)
+        restProductList();
+    </script>
 </head>
 <body>
 
@@ -36,7 +40,23 @@
                 </div>
             </div>
         </div>
-        <div class="card-body">${cpath}</div>
+        <div class="card-body">
+            <h5>製品リスト</h5>
+            <table id="productList" class="table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>製品番号</th>
+                        <th>製品名</th>
+                        <th>在庫</th>
+                        <th>値段</th>
+                        <th>製造社</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
         <div class="card-footer">Spring RESTful API SOA Project</div>
     </div>
 </div>
