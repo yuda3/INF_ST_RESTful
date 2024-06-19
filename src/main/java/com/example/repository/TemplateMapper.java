@@ -10,6 +10,7 @@ public interface TemplateMapper {
     List<Product> products();
     void register(Product product);
     int deleteById(int product_number);
+    Product getById(int product_number);
 
 }
 

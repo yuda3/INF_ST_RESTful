@@ -17,26 +17,34 @@ public class TemplateController {
     private TemplateService service;
 
     @RequestMapping("/rest")
-    public ResponseEntity<?> test(){
+    public ResponseEntity<String> test(){
          return new ResponseEntity<>("Restful API Test", HttpStatus.OK);
     }
 
     @GetMapping("/products")
-    public ResponseEntity<?> products(){
+    public ResponseEntity<List<Product>> products(){
         List<Product> list = service.products();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
-
+    //Post : https://localhost:8081/REST/api/products
     @PostMapping("/products")
-    public ResponseEntity<?> register(@RequestBody Product product){
+    public ResponseEntity<String> register(@RequestBody Product product){
         service.register(product);
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
 
+    //Delete : https://localhost:8081/REST/api/products/{id}
     @DeleteMapping("products/{product_number}")
-    public ResponseEntity<?> deleteById(@PathVariable int product_number){
+    public ResponseEntity<Integer> deleteById(@PathVariable int product_number){
         int cnt = service.deleteById(product_number);
         return new ResponseEntity<>(cnt,HttpStatus.OK);
     }
+    //Get : https://localhost:8081/REST/api/products/{id}
+    @GetMapping("products/{product_number}")
+    public ResponseEntity<Product> getById(@PathVariable int product_number){
+        Product product= service.getById(product_number);
+        return new ResponseEntity<>(product,HttpStatus.OK);
+    }
+
 
 }

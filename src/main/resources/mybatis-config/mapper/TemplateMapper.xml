@@ -15,5 +15,7 @@
     <delete id="deleteById">
         DELETE FROM PRODUCT WHERE PRODUCT_NUMBER=#{product_number}
     </delete>
-
+    <select id="getById" resultType="com.example.entity.Product">
+        SELECT * FROM PRODUCT WHERE PRODUCT_NUMBER=#{product_number}
+    </select>
 </mapper>

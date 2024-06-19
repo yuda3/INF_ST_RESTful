@@ -23,4 +23,8 @@ public class TemplateService {
     public int deleteById(int product_number){
         return mapper.deleteById(product_number);
     }
+
+    public Product getById(int product_number){
+        return mapper.getById(product_number);
+    }
 }
